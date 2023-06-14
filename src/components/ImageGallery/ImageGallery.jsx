@@ -6,7 +6,9 @@ import cssModule from './ImageGallery.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 
-export default function ImageGallery ({items}) {
+export default function ImageGallery({ items }) {
+    // console.log('items in ImageGallery:', items);
+
 		return (
 	        <div className={cssModule.gallery}>
                 <ImageList cols={3}>

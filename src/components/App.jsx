@@ -6,16 +6,16 @@ import { getPicturesThunk } from 'redux/operations';
 export default function App() {
   const dispatch = useDispatch();
   const { items, isLoading, error } = useSelector(state => state.pictures);
-
+  
   useEffect(() => {
     dispatch(getPicturesThunk());
   }, [dispatch]);
-
+  
     return (
       <div>
           {isLoading && <b>Loading pictures...</b>}
           {error && <b>{error}</b>}
-          {items.length > 0 && <ImageGallery items={items}/>}      
+          {items.hits?.length > 0 && <ImageGallery items={items.hits}/>}      
       </div>
     )
 }
